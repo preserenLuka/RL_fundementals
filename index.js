@@ -1,18 +1,35 @@
+// Ensure Firebase is initialized
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+
+// Firebase Authentication
+const auth = getAuth();
+
 document.addEventListener("DOMContentLoaded", () => {
   const menuLinks = document.querySelectorAll("#side-menu a");
   const sections = document.querySelectorAll(".section");
   const loginContainer = document.getElementById("login-container");
   const welcomeContainer = document.getElementById("welcome-container");
 
-  // Show the welcome container and hide the login container after login
-  document.getElementById("loginForm").addEventListener("submit", (e) => {
+  document.getElementById("loginForm").addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Perform login logic here...
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-    // Hide the login container and show the welcome container
-    loginContainer.style.display = "none";
-    welcomeContainer.style.display = "block";
+    try {
+      // Sign in with Firebase
+      await signInWithEmailAndPassword(auth, email, password);
+
+      // Hide the login container and show the welcome container
+      loginContainer.style.display = "none";
+      welcomeContainer.style.display = "block";
+    } catch (error) {
+      console.error("Error signing in:", error.message);
+      alert("Invalid email or password.");
+    }
   });
 
   menuLinks.forEach((link) => {
