@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Example</title>
-    <!-- Add your CSS here if you have any -->
+    <link rel="stylesheet" href="styles.css" />
+    <title>Website with Side Menu</title>
   </head>
   <body>
     <div id="login-container">
@@ -14,10 +14,42 @@
         <button type="submit">Login</button>
       </form>
     </div>
-    <div id="welcome-container" style="display: none">
-      <h1>Welcome to my website</h1>
+
+    <div id="welcome-container">
+      <div id="container">
+        <nav id="side-menu">
+          <ul>
+            <li>
+              <a href="#" data-section="about-me" class="active">About Me</a>
+            </li>
+            <li>
+              <a href="#" data-section="fitness-journey">Fitness Journey</a>
+            </li>
+            <li><a href="#" data-section="goals">Goals</a></li>
+            <li><a href="#" data-section="pictures">Pictures</a></li>
+          </ul>
+        </nav>
+        <main id="content">
+          <div id="about-me" class="section">
+            <h1>About Me</h1>
+            <p>This is the About Me section.</p>
+          </div>
+          <div id="fitness-journey" class="section">
+            <h1>Fitness Journey</h1>
+            <p>This section is coming soon.</p>
+          </div>
+          <div id="goals" class="section">
+            <h1>Goals</h1>
+            <p>This section is coming soon.</p>
+          </div>
+          <div id="pictures" class="section">
+            <h1>Pictures</h1>
+            <p>This section is coming soon.</p>
+          </div>
+        </main>
+      </div>
     </div>
-    <!-- Include your JavaScript file -->
-    <script type="module" src="index.js"></script>
+
+    <script src="index.js"></script>
   </body>
 </html>

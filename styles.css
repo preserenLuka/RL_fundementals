@@ -1,0 +1,117 @@
+/* General Styles for Body */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+}
+
+/* Login Form Styles */
+#login-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: auto;
+  margin-top: 10vh;
+}
+
+/* Form Styles */
+#loginForm {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button Styles */
+button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Welcome Message Styles */
+#welcome-container {
+  display: none; /* Initially hidden */
+}
+
+/* Container for the side menu and content */
+#container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Side Menu */
+#side-menu {
+  width: 250px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 15px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+}
+
+#side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#side-menu ul li {
+  margin-bottom: 10px;
+}
+
+#side-menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#side-menu ul li a.active {
+  background-color: #0056b3;
+}
+
+/* Main Content */
+#content {
+  margin-left: 250px;
+  padding: 20px;
+  width: calc(100% - 250px);
+  overflow-y: auto;
+}
+
+/* Section Styles */
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
