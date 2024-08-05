@@ -33,7 +33,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   background-color: rgb(23, 23, 23);
-  padding: 20px;
+  padding: 12px;
   color: rgb(236, 236, 236);
 }
 
@@ -77,7 +77,9 @@ body {
   align-items: center;
   text-decoration: none;
 }
-
+.info {
+  font-size: medium;
+}
 .buttonFooter {
   background-color: rgb(23, 23, 23);
 }
@@ -139,6 +141,11 @@ body {
 .menu-footer a:hover {
   background-color: #053f7e;
 }
+.menu-footer {
+  background-color: #223952;
+  border-radius: 5px;
+  padding: 5px;
+}
 
 .aButton {
   display: inline-block;
@@ -180,8 +187,43 @@ body {
 }
 .btnLimit {
   display: flex;
-  width: 853px;
+  width: 720px;
 }
-.mySlides iframe {
+
+iframe {
   border-radius: 8px;
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-container .tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above the container */
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+.discordLogo {
+  font-size: 150%;
+  padding: 0px 10px 0px 10px;
+}
+.discordLogo i div {
+  font-size: 70%;
 }
