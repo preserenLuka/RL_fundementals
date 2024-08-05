@@ -11,7 +11,7 @@ body {
 
 a {
   text-decoration: none;
-  padding: 20px;
+  padding: 15px;
   color: rgb(236, 236, 236);
 }
 
@@ -46,6 +46,14 @@ body {
   padding: 8px 5px 8px 5px;
   cursor: pointer;
 }
+.menu-items li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+}
 .menu-items li:hover {
   background-color: #0056b3;
   border-radius: 5px;
@@ -75,11 +83,11 @@ body {
 }
 
 .logoImg {
-  width: 50%;
+  width: 75%;
 }
 
 .imgDiv {
-  width: 40%;
+  width: 30%;
   padding: 1% 1% 1% 1%;
 }
 
@@ -96,6 +104,7 @@ body {
 .content h2 {
   border-bottom: 2px solid #2980b9;
   padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .content p,
@@ -111,11 +120,32 @@ body {
   align-items: center;
   padding: 10px;
   background-color: #0069dada;
-  color: white;
+  color: rgb(236, 236, 236);
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 7px;
+  font-size: 115%;
 }
 
 .menu-footer a:hover {
   background-color: #053f7e;
+}
+
+.aButton {
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background-color: #3d7abbda;
+  color: rgb(236, 236, 236);
+  border-radius: 8px;
+  padding: 14px 24px;
+  font-size: 18px;
+  font-weight: 550;
+  line-height: 1;
+  text-decoration: none; /* Remove underline */
+  text-align: center; /* Center text */
+}
+
+.aButton:hover {
+  background-color: #234c75; /* Optional: Change background on hover */
 }
