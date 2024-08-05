@@ -87,14 +87,27 @@ function plusDivs(n) {
 function showDivs(n) {
   var i;
   var x = document.getElementsByClassName("mySlides");
+
   if (n > x.length) {
     slideIndex = 1;
   }
   if (n < 1) {
     slideIndex = x.length;
   }
+
+  // Loop through all slides
   for (i = 0; i < x.length; i++) {
+    var iframe = x[i].querySelector("iframe");
+    if (iframe) {
+      // Pause the video
+      iframe.contentWindow.postMessage(
+        '{"event":"command","func":"pauseVideo","args":""}',
+        "*"
+      );
+    }
     x[i].style.display = "none";
   }
+
+  // Show the current slide
   x[slideIndex - 1].style.display = "block";
 }
