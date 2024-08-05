@@ -11,7 +11,7 @@ body {
 
 a {
   text-decoration: none;
-  padding: 15px;
+
   color: rgb(236, 236, 236);
 }
 
@@ -43,12 +43,12 @@ body {
 
 .menu-items li {
   margin: 8px 5px 8px 5px;
-  padding: 8px 5px 8px 5px;
+
   cursor: pointer;
 }
 .menu-items li a {
   display: block;
-  padding: 10px;
+  padding: 15px 14px 15px 14px;
   text-decoration: none;
   color: inherit;
   width: 100%;
@@ -117,6 +117,10 @@ body {
 .content ul {
   margin: 10px 0;
 }
+.hight20px {
+  width: 10px;
+  height: 20px;
+}
 
 .content ul {
   padding-left: 20px;
@@ -154,4 +158,26 @@ body {
 
 .aButton:hover {
   background-color: #234c75; /* Optional: Change background on hover */
+}
+
+.mySlides {
+  display: none;
+  border-radius: 7px;
+  margin-bottom: 0.5%;
+}
+.vidPlayerBtn {
+  all: unset;
+  display: inline-block;
+  cursor: pointer;
+  padding: 12px 5px 10px 5px;
+  border-radius: 3px;
+  margin: 1%;
+  width: 50%;
+  color: white;
+  background-color: rgb(35, 76, 117);
+  text-align: center;
+}
+.btnLimit {
+  display: flex;
+  width: 853px;
 }
