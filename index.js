@@ -12,5 +12,5 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .querySelectorAll(".content section")
     .forEach((section) => (section.style.display = "none"));
-  document.querySelector("#general-tips").style.display = "block";
+  document.querySelector("#Welcome").style.display = "block";
 });
