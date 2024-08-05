@@ -162,8 +162,9 @@ body {
 
 .mySlides {
   display: none;
-  border-radius: 7px;
+
   margin-bottom: 0.5%;
+  border: none;
 }
 .vidPlayerBtn {
   all: unset;
@@ -180,4 +181,7 @@ body {
 .btnLimit {
   display: flex;
   width: 853px;
+}
+.mySlides iframe {
+  border-radius: 8px;
 }
