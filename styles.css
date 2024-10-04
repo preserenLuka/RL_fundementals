@@ -11,7 +11,6 @@ body {
 
 a {
   text-decoration: none;
-
   color: rgb(236, 236, 236);
 }
 
@@ -23,7 +22,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: 17% 83%;
+  grid-template-columns: 13% 87%;
   height: 100vh;
   width: 100vw;
 }
@@ -43,23 +42,25 @@ body {
 
 .menu-items li {
   margin: 8px 5px 8px 5px;
-
   cursor: pointer;
 }
+
 .menu-items li a {
   display: block;
-  padding: 15px 14px 15px 14px;
+  padding: 15px 14px;
   text-decoration: none;
   color: inherit;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
 }
+
 .menu-items li:hover {
   background-color: #0056b3;
   border-radius: 5px;
   cursor: pointer;
 }
+
 .menu-items li.active {
   border-left: 3px solid rgb(28, 28, 218);
   background-color: #003d7a81;
@@ -67,7 +68,7 @@ body {
 }
 
 .menu-footer .logo img {
-  max-width: 100%;
+  max-width: 1000%;
   height: auto;
 }
 
@@ -77,9 +78,11 @@ body {
   align-items: center;
   text-decoration: none;
 }
+
 .info {
   font-size: 145%;
 }
+
 .buttonFooter {
   background-color: rgb(23, 23, 23);
 }
@@ -96,7 +99,7 @@ body {
 
 .imgDiv {
   width: 30%;
-  padding: 1% 1% 1% 1%;
+  padding: 1%;
 }
 
 .content {
@@ -119,6 +122,7 @@ body {
 .content ul {
   margin: 10px 0;
 }
+
 .hight20px {
   width: 10px;
   height: 20px;
@@ -127,6 +131,7 @@ body {
 .content ul {
   padding-left: 20px;
 }
+
 .menu-footer a {
   display: flex;
   align-items: center;
@@ -141,6 +146,7 @@ body {
 .menu-footer a:hover {
   background-color: #053f7e;
 }
+
 .menu-footer {
   background-color: #223952;
   border-radius: 5px;
@@ -159,35 +165,31 @@ body {
   font-size: 18px;
   font-weight: 550;
   line-height: 1;
-  text-decoration: none; /* Remove underline */
-  text-align: center; /* Center text */
+  text-decoration: none;
+  text-align: center;
 }
 
 .aButton:hover {
-  background-color: #234c75; /* Optional: Change background on hover */
+  background-color: #234c75;
 }
 
 .mySlides {
   display: none;
-
   margin-bottom: 0.5%;
   border: none;
 }
+
 .vidPlayerBtn {
   all: unset;
   display: inline-block;
   cursor: pointer;
-  padding: 12px 5px 10px 5px;
+  padding: 12px 5px;
   border-radius: 3px;
   margin: 1%;
   width: 50%;
   color: white;
   background-color: rgb(35, 76, 117);
   text-align: center;
-}
-.btnLimit {
-  display: flex;
-  width: 720px;
 }
 
 iframe {
@@ -209,7 +211,7 @@ iframe {
   padding: 5px;
   position: absolute;
   z-index: 1;
-  bottom: 125%; /* Position above the container */
+  bottom: 125%;
   left: 50%;
   margin-left: -60px;
   opacity: 0;
@@ -220,10 +222,128 @@ iframe {
   visibility: visible;
   opacity: 1;
 }
+
 .discordLogo {
   font-size: 150%;
-  padding: 0px 10px 0px 10px;
+  padding: 0px 10px;
 }
+
 .discordLogo i div {
   font-size: 70%;
+}
+
+/* Media Queries for 1080p and Mobile Devices */
+
+/* Styles for 1080p (Full HD) */
+@media screen and (max-width: 1920px) {
+  .container {
+    grid-template-columns: 12% 88%;
+  }
+
+  .menu {
+    padding: 10px;
+  }
+
+  .content {
+    padding: 13px;
+  }
+
+  .menu-items li a {
+    padding: 12px 10px;
+  }
+}
+
+/* Styles for mobile devices (portrait mode) */
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .menu {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 8px;
+  }
+
+  .menu-items li a {
+    padding: 10px 8px;
+  }
+
+  .content {
+    padding: 10px;
+  }
+
+  .menu-footer a {
+    font-size: 100%;
+    padding: 8px;
+  }
+
+  .aButton {
+    padding: 12px 16px;
+    font-size: 16px;
+  }
+
+  .btnLimit {
+    width: 100%;
+  }
+
+  .imgDiv {
+    width: 100%;
+  }
+}
+
+/* Styles for smaller mobile devices (like phones) */
+@media screen and (max-width: 480px) {
+  .menu {
+    flex-direction: column;
+    padding: 5px;
+  }
+
+  .menu-items li {
+    margin: 5px 0;
+  }
+
+  .aButton {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .discordLogo {
+    font-size: 120%;
+    padding: 0px 5px;
+  }
+}
+
+/* Default iframe size for 1440p */
+.responsive-iframe {
+  width: 720px;
+  height: 405px;
+}
+.btnLimit {
+  display: flex;
+  width: 720px;
+}
+
+/* Iframe size for 1080p and smaller screens */
+@media screen and (max-width: 1920px) {
+  .responsive-iframe {
+    width: 560px;
+    height: 315px;
+  }
+  .btnLimit {
+    width: 560px;
+  }
+}
+
+/* Iframe size for mobile devices (768px and below) */
+@media screen and (max-width: 768px) {
+  .responsive-iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Ensures it maintains the 16:9 aspect ratio */
+  }
+  .btnLimit {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+  }
 }
