@@ -30,7 +30,7 @@ body {
 .menu {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start; /* Changed from space-between to flex-start */
   background-color: rgb(23, 23, 23);
   padding: 12px;
   color: rgb(236, 236, 236);
@@ -38,10 +38,11 @@ body {
 
 .menu-items ul {
   list-style-type: none;
+  padding: 0; /* Ensure there's no padding */
 }
 
 .menu-items li {
-  margin: 8px 5px;
+  margin: 0; /* Remove margin */
   cursor: pointer;
 }
 
@@ -247,6 +248,10 @@ iframe {
   }
 }
 
+.hidden {
+  display: none; /* or visibility: hidden; */
+}
+
 /* Styles for mobile devices (portrait mode) */
 @media screen and (max-width: 868px) {
   .container {
@@ -271,9 +276,11 @@ iframe {
     font-size: 100%;
     padding: 8px;
   }
+
   .menu-footer {
     height: 100%;
   }
+
   .aButton {
     padding: 12px 16px;
     font-size: 16px;
@@ -285,6 +292,14 @@ iframe {
 
   .imgDiv {
     width: 11%;
+  }
+
+  .menu-items ul li {
+    display: block; /* Display all items by default */
+  }
+
+  .menu-items ul li.hidden {
+    display: none; /* Class to hide items */
   }
 }
 
@@ -308,6 +323,13 @@ iframe {
     font-size: 120%;
     padding: 0px 5px;
   }
+  .menu-items ul li {
+    display: block; /* Display all items by default */
+  }
+
+  .menu-items ul li.hidden {
+    display: none; /* Class to hide items */
+  }
 }
 
 /* Default iframe size for 1440p */
@@ -315,20 +337,10 @@ iframe {
   width: 720px;
   height: 405px;
 }
+
 .btnLimit {
   display: flex;
   width: 720px;
-}
-
-/* Iframe size for 1080p and smaller screens */
-@media screen and (max-width: 1920px) {
-  .responsive-iframe {
-    width: 560px;
-    height: 315px;
-  }
-  .btnLimit {
-    width: 560px;
-  }
 }
 
 /* Iframe size for mobile devices (768px and below) */

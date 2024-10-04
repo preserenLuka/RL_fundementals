@@ -111,3 +111,33 @@ function showDivs(n) {
   // Show the current slide
   x[slideIndex - 1].style.display = "block";
 }
+
+document.querySelectorAll(".menu-items li a").forEach((link) => {
+  link.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default anchor behavior
+
+    const menuItems = document.querySelectorAll(".menu-items li");
+    const menuFooter = document.querySelector(".menu-footer");
+    const isActive = this.parentElement.classList.contains("active");
+
+    // If the clicked item is active, show all items
+    if (isActive) {
+      // Show all menu items
+      menuItems.forEach((item) => {
+        item.classList.remove("hidden");
+        item.classList.remove("active"); // Remove active state from all
+      });
+      menuFooter.style.display = "block"; // Show the footer
+      document.getElementById("logoBeach").classList.remove("active"); // Reset the logo's active state
+    } else {
+      // Hide all menu items
+      menuItems.forEach((item) => {
+        item.classList.add("hidden");
+        item.classList.remove("active"); // Remove active state from others
+      });
+      this.parentElement.classList.remove("hidden"); // Show only the clicked item
+      this.parentElement.classList.add("active"); // Set clicked item as active
+      menuFooter.style.display = "none"; // Hide the footer
+    }
+  });
+});
