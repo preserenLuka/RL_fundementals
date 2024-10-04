@@ -119,28 +119,37 @@ document.querySelectorAll(".menu-items li a").forEach((link) => {
     const menuItems = document.querySelectorAll(".menu-items li");
     const menuFooter = document.querySelector(".menu-footer");
     const isActive = this.parentElement.classList.contains("active");
+    const allVisible = Array.from(menuItems).every(
+      (item) => !item.classList.contains("hidden")
+    );
 
-    // Reset all menu items
-    menuItems.forEach((item) => {
-      item.classList.remove("active"); // Remove active state from all items
-    });
-
-    // If the clicked item is active, toggle its state
-    if (isActive) {
-      // Show all items and the footer
-      menuItems.forEach((item) => {
-        item.classList.remove("hidden");
-      });
-      menuFooter.style.display = "block"; // Show the footer
-      document.getElementById("logoBeach").classList.remove("active"); // Reset logo state
-    } else {
-      // Hide all menu items except the clicked one
+    // If all items are visible, hide all except the clicked one
+    if (allVisible) {
       menuItems.forEach((item) => {
         item.classList.add("hidden");
+        item.classList.remove("active");
       });
-      this.parentElement.classList.remove("hidden"); // Show the clicked item
-      this.parentElement.classList.add("active"); // Set clicked item as active
-      menuFooter.style.display = "none"; // Hide the footer
+      this.parentElement.classList.remove("hidden");
+      this.parentElement.classList.add("active");
+      menuFooter.style.display = "none"; // Hide the footer when a single item is active
+    }
+    // If clicked item is active, show all items
+    else if (isActive) {
+      menuItems.forEach((item) => {
+        item.classList.remove("hidden");
+        item.classList.remove("active");
+      });
+      menuFooter.style.display = "block"; // Show the footer when all items are visible
+    }
+    // If clicked item is not active and some items are hidden, show only the clicked one
+    else {
+      menuItems.forEach((item) => {
+        item.classList.add("hidden");
+        item.classList.remove("active");
+      });
+      this.parentElement.classList.remove("hidden");
+      this.parentElement.classList.add("active");
+      menuFooter.style.display = "none"; // Hide the footer when a single item is active
     }
   });
 });
